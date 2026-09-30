@@ -9,3 +9,5 @@ Every pull request adds **one new file** to this folder that says who you are an
 3. Fill it in and include it in your pull request.
 
 That's it! Because everyone creates their own file, you'll never get a merge conflict here.
+
+> 🤖 An automatic check runs on every pull request. If you forget this file, the check turns red ❌. Add the file, push again, and it turns green ✅.

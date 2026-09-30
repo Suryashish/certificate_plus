@@ -1,0 +1,45 @@
+# Fails a pull request if it doesn't add a new file to the changelog/ folder.
+# Maintainers can skip this check by adding the "skip-changelog" label to a PR.
+
+name: Changelog check
+
+on:
+  pull_request:
+    types: [opened, synchronize, reopened, labeled, unlabeled]
+
+jobs:
+  changelog:
+    runs-on: ubuntu-latest
+    if: ${{ !contains(github.event.pull_request.labels.*.name, 'skip-changelog') }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Look for a new file in changelog/
+        env:
+          BASE_REF: ${{ github.base_ref }}
+        run: |
+          NEW_FILES=$(git diff --name-only --diff-filter=A "origin/$BASE_REF...HEAD" -- 'changelog/*.md' \
+            | grep -v -e 'changelog/_template.md' -e 'changelog/README.md' || true)
+
+          if [ -z "$NEW_FILES" ]; then
+            echo "::error::No changelog file found. Please add one to the changelog/ folder."
+            {
+              echo "## ❌ Missing changelog file"
+              echo ""
+              echo "Every pull request needs its own file in the \`changelog/\` folder."
+              echo ""
+              echo "1. Copy \`changelog/_template.md\`"
+              echo "2. Name it \`your-github-username-short-title.md\`"
+              echo "3. Fill in your name and what you did, then push again"
+              echo ""
+              echo "See \`changelog/README.md\` for details."
+            } >> "$GITHUB_STEP_SUMMARY"
+            exit 1
+          fi
+
+          echo "✅ Found changelog file(s):"
+          echo "$NEW_FILES"
+          echo "## ✅ Changelog file found" >> "$GITHUB_STEP_SUMMARY"
+          echo "$NEW_FILES" >> "$GITHUB_STEP_SUMMARY"
