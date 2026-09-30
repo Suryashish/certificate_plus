@@ -124,5 +124,3 @@ When you import a CSV, a column called `name` fills the field whose key is `name
 ## 📄 License
 
 [MIT](LICENSE). You're free to use, copy, and change it.
-
-<p align="center">Made with ❤️ by the community. <b>Your name could be in the changelog next!</b></p>
