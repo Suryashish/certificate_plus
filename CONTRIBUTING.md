@@ -27,8 +27,8 @@ Best for code changes.
 
 ```bash
 # 1. Fork the repo on GitHub (button at the top right), then:
-git clone https://github.com/<your-username>/<repo-name>.git
-cd <repo-name>
+git clone https://github.com/<your-username>/certificate_plus.git
+cd certificate_plus
 
 # 2. Make a branch for your change
 git checkout -b my-change
@@ -54,8 +54,9 @@ git push origin my-change
 
 ## Tips
 
+- **Not sure what to work on?** Start with a [good first issue](https://github.com/Suryashish/certificate_plus/issues?q=is%3Aopen+label%3A%22good+first+issue%22).
 - **Want to work on an issue?** Comment *"I'm working on this"* so others know.
-- **Have an idea or found a bug?** Open an [issue](../../issues) first.
+- **Have an idea or found a bug?** Open an [issue](https://github.com/Suryashish/certificate_plus/issues) first.
 - **Keep it small.** One change per pull request is easiest to review.
 - **Asked to change something in review?** That's normal. Push another commit to the same branch and the PR updates by itself.
 - Please be kind. See the [Code of Conduct](CODE_OF_CONDUCT.md).

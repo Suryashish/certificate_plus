@@ -4,6 +4,8 @@ An **open-source certificate builder**. Design a certificate (or upload one you 
 
 > **This repo is made for learning open source.** Only a basic version exists so far, and the rest is waiting for you. Pick something from the [Roadmap](#-roadmap) and make your first pull request!
 
+**Quick links:** 🟢 [Good first issues](https://github.com/Suryashish/certificate_plus/issues?q=is%3Aopen+label%3A%22good+first+issue%22) · 📖 [Contributing guide](CONTRIBUTING.md) · 🤝 [Code of Conduct](CODE_OF_CONDUCT.md) · 📝 [Changelog](changelog/)
+
 ---
 
 ## 💡 The idea
@@ -27,30 +29,44 @@ You ran a workshop for 300 people. Typing 300 names by hand is slow and full of 
 
 ## 🚀 Run it locally
 
-You need [Node.js](https://nodejs.org/) v20.12 or newer.
+You need [Node.js](https://nodejs.org/) v20.12 or newer and [Git](https://git-scm.com/).
 
 ```bash
+git clone https://github.com/Suryashish/certificate_plus.git
+cd certificate_plus
+
 npm run setup   # first time only: installs everything
 npm run dev     # starts the app
 ```
+
+> Planning to contribute? **Fork** the repo first and clone *your fork* instead. See [CONTRIBUTING.md](CONTRIBUTING.md).
 
 Open **http://localhost:5173** and go to **Builder**. To try the import, click **Download a sample CSV** and upload it.
 
 ---
 
-## 🤝 Contribute in 3 steps
+## 🤝 How to contribute
 
-1. **Make a change.** Fix something, add a feature, or improve the docs.
-2. **Add your changelog file.** Copy [`changelog/_template.md`](changelog/_template.md) to `changelog/your-username-short-title.md` and write your name and what you did.
-3. **Open a pull request.**
+👉 **Read the full step-by-step guide: [CONTRIBUTING.md](CONTRIBUTING.md)**
 
-You can even do all of this **on the GitHub website without installing anything**. See **[CONTRIBUTING.md](CONTRIBUTING.md)** for both ways.
+The short version:
+
+1. **Pick an issue.** Start with a [good first issue](https://github.com/Suryashish/certificate_plus/issues?q=is%3Aopen+label%3A%22good+first+issue%22) and comment *"I'm working on this"*.
+2. **Make your change.**
+3. **Add your changelog file.** Copy [`changelog/_template.md`](changelog/_template.md) to `changelog/your-username-short-title.md` and write your name and what you did.
+4. **Open a pull request** and write `Closes #<issue number>` in it.
+
+💡 Small changes can be done **entirely on the GitHub website**, no install needed. CONTRIBUTING.md shows how.
+
+🤖 An automatic check runs on every pull request. If it turns red ❌, you probably forgot your changelog file. Add it, push again, and it turns green ✅.
+
+Please be kind to each other and follow our [Code of Conduct](CODE_OF_CONDUCT.md).
 
 ---
 
 ## 🗺️ Roadmap
 
-Each item can become an issue or a pull request.
+Many beginner items already have [ready-made issues](https://github.com/Suryashish/certificate_plus/issues?q=is%3Aopen+label%3A%22good+first+issue%22). For anything else, [open an issue](https://github.com/Suryashish/certificate_plus/issues/new/choose) first so others know you're on it.
 
 ### 🟢 Beginner friendly
 - [ ] Redesign the landing page
@@ -75,7 +91,7 @@ Each item can become an issue or a pull request.
 - [ ] Add a QR code so certificates can be verified
 - [ ] Add tests and GitHub Actions
 
-Have another idea? [Open an issue](../../issues/new/choose)!
+Have another idea? [Open an issue](https://github.com/Suryashish/certificate_plus/issues/new/choose)!
 
 ---
 
@@ -89,7 +105,12 @@ client/                      React app (what you see in the browser)
 server/                      Express API
   src/data/templates.json    The certificate templates
   src/routes/                API endpoints
-changelog/                   One file per contribution
+changelog/                   One file per contribution (add yours here!)
+.github/                     Issue & PR templates, and the automatic changelog check
+CONTRIBUTING.md              How to contribute, step by step
+CODE_OF_CONDUCT.md           How we treat each other
+LICENSE                      MIT license
+package.json                 `npm run setup` and `npm run dev` live here
 ```
 
 **Tech:** React + Vite (JavaScript only), Express, and plain CSS.
