@@ -9,6 +9,9 @@ function Navbar() {
       <nav className="navbar-links">
         <NavLink to="/">Home</NavLink>
         <NavLink to="/builder">Builder</NavLink>
+        <a href="https://github.com/Suryashish/certificate_plus" target="_blank" rel="noreferrer">
+          GitHub
+        </a>
       </nav>
     </header>
   );
