@@ -1,0 +1,298 @@
+/* Plain CSS on purpose — easy for anyone to read and change. */
+
+:root {
+  --bg: #f7f7fb;
+  --surface: #ffffff;
+  --text: #1d1d27;
+  --muted: #6b6b7b;
+  --border: #e2e2ea;
+  --primary: #4f46e5;
+  --primary-text: #ffffff;
+  --radius: 8px;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  color: var(--text);
+  background: var(--bg);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+}
+
+a {
+  color: var(--primary);
+}
+
+/* ---------- Navbar ---------- */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 24px;
+  background: var(--surface);
+  border-bottom: 1px solid var(--border);
+}
+
+.navbar-brand {
+  font-weight: 700;
+  text-decoration: none;
+  color: var(--text);
+}
+
+.navbar-links {
+  display: flex;
+  gap: 16px;
+}
+
+.navbar-links a {
+  text-decoration: none;
+  color: var(--muted);
+}
+
+.navbar-links a.active {
+  color: var(--primary);
+  font-weight: 600;
+}
+
+/* ---------- Buttons ---------- */
+.btn {
+  display: inline-block;
+  padding: 10px 16px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--surface);
+  color: var(--text);
+  font-size: 14px;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.btn-primary {
+  background: var(--primary);
+  border-color: var(--primary);
+  color: var(--primary-text);
+}
+
+.btn-small {
+  padding: 6px 10px;
+  font-size: 13px;
+}
+
+/* ---------- Landing page ---------- */
+.landing {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 48px 16px;
+}
+
+.hero {
+  text-align: center;
+  padding: 48px 0;
+}
+
+.hero h1 {
+  font-size: clamp(28px, 5vw, 44px);
+  margin-bottom: 12px;
+}
+
+.hero p {
+  color: var(--muted);
+  max-width: 560px;
+  margin: 0 auto 24px;
+}
+
+.features {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 16px;
+}
+
+.card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 20px;
+}
+
+.card p {
+  color: var(--muted);
+  margin: 0;
+}
+
+.contribute {
+  text-align: center;
+  margin-top: 48px;
+  color: var(--muted);
+}
+
+/* ---------- Builder page ---------- */
+.builder {
+  display: grid;
+  grid-template-columns: 320px 1fr;
+  gap: 24px;
+  padding: 24px;
+}
+
+@media (max-width: 800px) {
+  .builder {
+    grid-template-columns: 1fr;
+    padding: 16px;
+  }
+}
+
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.panel {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.panel h3 {
+  margin: 0 0 4px;
+  font-size: 15px;
+}
+
+.template-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.template-option {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  text-align: left;
+  padding: 10px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--surface);
+  cursor: pointer;
+}
+
+.template-option span {
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.template-option.active {
+  border-color: var(--primary);
+  outline: 1px solid var(--primary);
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  font-size: 13px;
+}
+
+.field code {
+  color: var(--muted);
+  font-size: 11px;
+}
+
+.field input {
+  padding: 8px;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  font-size: 14px;
+}
+
+.hint {
+  color: var(--muted);
+  font-size: 13px;
+  margin: 0;
+}
+
+.center {
+  text-align: center;
+  padding: 48px;
+}
+
+.error {
+  color: #b42318;
+  text-align: center;
+  padding: 48px 16px;
+}
+
+.preview-area {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  min-width: 0;
+}
+
+.import-info,
+.row-nav,
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+}
+
+.import-info {
+  flex-direction: column;
+  align-items: flex-start;
+  font-size: 14px;
+}
+
+.import-info p {
+  margin: 0;
+}
+
+/* ---------- Certificate ---------- */
+.certificate {
+  position: relative;
+  width: 100%;
+  max-width: 800px;
+  border: 10px double;
+  container-type: inline-size; /* enables "cqw" units for font scaling */
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+}
+
+.certificate-field {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  white-space: nowrap;
+  font-family: Georgia, "Times New Roman", serif;
+  text-align: center;
+}
+
+/* ---------- Print: only show the certificate ---------- */
+@media print {
+  .no-print {
+    display: none !important;
+  }
+
+  body,
+  .builder {
+    background: white;
+    padding: 0;
+    display: block;
+  }
+
+  .certificate {
+    box-shadow: none;
+  }
+}

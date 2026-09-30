@@ -1,0 +1,13 @@
+{
+  "name": "certificate-builder",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Open-source certificate builder. Run `npm run setup` once, then `npm run dev`.",
+  "scripts": {
+    "setup": "npm install && npm install --prefix server && npm install --prefix client",
+    "dev": "concurrently -n server,client -c blue,green \"npm run dev --prefix server\" \"npm run dev --prefix client\""
+  },
+  "devDependencies": {
+    "concurrently": "^9.2.0"
+  }
+}

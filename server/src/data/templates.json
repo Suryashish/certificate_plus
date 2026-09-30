@@ -1,0 +1,35 @@
+[
+  {
+    "id": "classic",
+    "name": "Classic",
+    "description": "A simple bordered certificate with a centered name.",
+    "width": 800,
+    "height": 565,
+    "background": "#fffdf5",
+    "borderColor": "#b08d57",
+    "fields": [
+      { "key": "title", "label": "Title", "defaultValue": "Certificate of Achievement", "x": 50, "y": 20, "fontSize": 34, "color": "#3b2f1e" },
+      { "key": "subtitle", "label": "Subtitle", "defaultValue": "This certificate is proudly presented to", "x": 50, "y": 36, "fontSize": 16, "color": "#6b5b45" },
+      { "key": "name", "label": "Recipient Name", "defaultValue": "Jane Doe", "x": 50, "y": 50, "fontSize": 40, "color": "#1f1a12" },
+      { "key": "reason", "label": "Reason", "defaultValue": "for completing the Open Source Basics workshop", "x": 50, "y": 64, "fontSize": 16, "color": "#6b5b45" },
+      { "key": "date", "label": "Date", "defaultValue": "30 Sep 2026", "x": 25, "y": 84, "fontSize": 14, "color": "#3b2f1e" },
+      { "key": "signedBy", "label": "Signed By", "defaultValue": "Organizer", "x": 75, "y": 84, "fontSize": 14, "color": "#3b2f1e" }
+    ]
+  },
+  {
+    "id": "modern",
+    "name": "Modern",
+    "description": "A clean, minimal certificate with a dark header color.",
+    "width": 800,
+    "height": 565,
+    "background": "#f5f7fb",
+    "borderColor": "#2f3b8f",
+    "fields": [
+      { "key": "title", "label": "Title", "defaultValue": "CERTIFICATE", "x": 50, "y": 18, "fontSize": 38, "color": "#2f3b8f" },
+      { "key": "subtitle", "label": "Subtitle", "defaultValue": "of participation", "x": 50, "y": 30, "fontSize": 18, "color": "#555" },
+      { "key": "name", "label": "Recipient Name", "defaultValue": "John Smith", "x": 50, "y": 50, "fontSize": 40, "color": "#111" },
+      { "key": "event", "label": "Event", "defaultValue": "Hacktoberfest Meetup 2026", "x": 50, "y": 64, "fontSize": 18, "color": "#555" },
+      { "key": "date", "label": "Date", "defaultValue": "30 Sep 2026", "x": 50, "y": 84, "fontSize": 14, "color": "#333" }
+    ]
+  }
+]
