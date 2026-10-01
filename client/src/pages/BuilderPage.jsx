@@ -54,6 +54,10 @@ function BuilderPage() {
   function handleFieldChange(key, value) {
     setValues((prev) => ({ ...prev, [key]: value }));
   }
+   
+  function handleReset() {
+  setValues(getDefaultValues(template));
+}
 
   function handleImport(result) {
     setImported(result);
@@ -98,6 +102,7 @@ function BuilderPage() {
         <FieldEditor
           fields={template.fields}
           values={values}
+          onReset={handleReset}
           onChange={handleFieldChange}
         />
         <DataImport fields={template.fields} onImport={handleImport} />

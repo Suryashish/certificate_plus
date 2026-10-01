@@ -1,12 +1,14 @@
-function FieldEditor({ fields, values, onChange }) {
+function FieldEditor({ fields, values, onChange, onReset }) {
   return (
     <div className="panel">
       <h3>3. Fill in the fields</h3>
+
       {fields.map((field) => (
         <label key={field.key} className="field">
           <span>
             {field.label} <code>{field.key}</code>
           </span>
+
           <input
             type="text"
             value={values[field.key] ?? ""}
@@ -14,6 +16,14 @@ function FieldEditor({ fields, values, onChange }) {
           />
         </label>
       ))}
+
+      <button
+        type="button"
+        onClick={onReset}
+        className="btn"
+      >
+        Reset to defaults
+      </button>
     </div>
   );
 }
