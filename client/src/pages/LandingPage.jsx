@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import { Link } from "react-router-dom";
 
 // 👋 Contributors: this landing page is intentionally basic.
@@ -21,6 +22,9 @@ const features = [
 ];
 
 function LandingPage() {
+    useEffect(() => {
+    document.title = "Home · Certificate Builder";
+  }, []);
   return (
     <div className="landing">
       <section className="hero">

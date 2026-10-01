@@ -16,6 +16,9 @@ function getDefaultValues(template) {
 }
 
 function BuilderPage() {
+    useEffect(() => {
+    document.title = "Builder · Certificate Builder";
+  }, []);
   const [templates, setTemplates] = useState([]);
   const [selectedId, setSelectedId] = useState(null);
   const [values, setValues] = useState({});
